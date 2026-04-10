@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository evaluates sex bias in both conventional deep learning models (ViT-Large, DenseNet121, ResNet) and ophthalmic foundation models (RETFound, RETFound-DE, VisionFM) for retinal disease diagnosis. It supports fine-tuning under multi-class and multi-label settings, enabling systematic comparison of model performance across male and female subgroups to assess potential demographic bias.
+This repository evaluates sex bias in both conventional deep learning models (ViT-Large, DenseNet121, ResNet50) and ophthalmic foundation models (RETFound, RETFound-DE, VisionFM) for retinal disease diagnosis. It supports fine-tuning under multi-class and multi-label settings, enabling systematic comparison of model performance across male and female subgroups to assess potential demographic bias.
 
 ## Prerequisities & Installation
 
@@ -19,7 +19,7 @@ git clone https://github.com/NBeye-research/FundusSexBias.git
 cd FundusSexBias
 pip install -r requirements.txt
 ```
-* The pretraining code is based on [`timm==0.3.2`](https://github.com/rwightman/pytorch-image-models), for which a [fix](https://github.com/rwightman/pytorch-image-models/issues/420#issuecomment-776459842) is needed to work with PyTorch 1.8.1+.
+* The fintuning code is based on [`timm==0.3.2`](https://github.com/rwightman/pytorch-image-models), for which a [fix](https://github.com/rwightman/pytorch-image-models/issues/420#issuecomment-776459842) is needed to work with PyTorch 1.8.1+.
 
 ## Finetuning
 
