@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository evaluates sex bias in both conventional deep learning models (ViT-Large, DenseNet121, ResNet50) and ophthalmic foundation models (RETFound, RETFound-DE, VisionFM) for retinal disease diagnosis. It supports fine-tuning under multi-class and multi-label settings, enabling systematic comparison of model performance across male and female subgroups to assess potential demographic bias.
+This repository evaluates sex bias in both conventional deep learning models (ViT-Large, DenseNet121, ResNet50) and ophthalmic foundation models (RETFound, RETFound-DE, VisionFM) for retinal disease diagnosis. 
 
 ## Prerequisities & Installation
 
@@ -33,33 +33,7 @@ Organise your data into this directory structure
         ├──...
 ```
 
-Multi-class fine-tuning
-
-```bash
-
-PRETRAIN_PATH=/path/to/pretrain_weights.pt
-DATA_ROOT=/path/to/img_root_path
-
-#RETFound_mae, vision_FM, vit_large_patch16_224, densenet121, resnet50
-ARCH=vit_large_patch16_224
-
-TAG_PATH=${DATA_ROOT}/label_info.xlsx
-
- CUDA_VISIBLE_DEVICES=0 python run_class_finetuning.py \
-     --batch_size 16 \
-     --arch ${ARCH} \
-     --fine_tuning ${PRETRAIN_PATH} \
-     --data_path ${DATA_ROOT} \
-     --epochs 50 \
-     --lr 5e-3 \
-     --tag_path ${TAG_PATH} \
-     --image_size 224 \
-     --output_dir ./sex_baias_models \
-     --tag multi_class
-```
-
-
-Multi-label fine-tuning
+Fine-tuning script
 
 ```bash
 
